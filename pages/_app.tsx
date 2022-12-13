@@ -1,3 +1,4 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { Global } from '@emotion/react';
 import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider, Session } from '@supabase/auth-helpers-react';
@@ -18,9 +19,11 @@ function MyApp({
     <SessionContextProvider
       supabaseClient={supabaseClient}
       initialSession={pageProps.initialSession}>
-      <Global styles={global} />
-      <Global styles={reset} />
-      <Component {...pageProps} />
+      <ChakraProvider>
+        <Global styles={global} />
+        <Global styles={reset} />
+        <Component {...pageProps} />
+      </ChakraProvider>
     </SessionContextProvider>
   );
 }
