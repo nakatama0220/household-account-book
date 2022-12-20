@@ -1,7 +1,6 @@
-// eslint-disable-next-line import/named
-import { Session, User } from '@supabase/supabase-js';
 import { useEffect, useState } from 'react';
 import supabase from '../../../utils/supabase';
+import type { Session, User } from '../../@types/session';
 
 type Hooks = {
   session: Session | null;

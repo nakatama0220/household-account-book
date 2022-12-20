@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/named
 import { FC, ReactNode } from 'react';
 import { Login } from '../../organisms/Login';
 import { useHooks } from './hooks';
