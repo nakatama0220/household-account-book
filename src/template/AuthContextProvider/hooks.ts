@@ -17,7 +17,7 @@ export const useHooks = (): Hooks => {
     });
 
     const { data: authListener } = supabase.auth.onAuthStateChange(async (event, session) => {
-      console.log(`Supabase auth event: ${event}`);
+      console.log(`Supabaseauth event: ${event}`);
       setSession(session);
       setUser(session?.user ?? null);
     });
