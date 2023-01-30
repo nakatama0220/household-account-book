@@ -1,5 +1,5 @@
 import { useCallback, useState, ChangeEvent, useEffect } from 'react';
-import { supabase } from '../../../utils/supabase';
+import supabase from '../../../utils/supabase';
 
 type FormValue = {
   email: string;
