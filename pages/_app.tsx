@@ -7,13 +7,11 @@ import { reset } from '../styles/reset';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AuthContextProvider>
-      <ChakraProvider>
-        <Global styles={global} />
-        <Global styles={reset} />
-        <Component {...pageProps} />
-      </ChakraProvider>
-    </AuthContextProvider>
+    <ChakraProvider>
+      <Global styles={global} />
+      <Global styles={reset} />
+      <Component {...pageProps} />
+    </ChakraProvider>
   );
 }
 
