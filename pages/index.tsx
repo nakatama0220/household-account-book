@@ -1,10 +1,11 @@
+import { AuthContextProvider } from '../src/template/AuthContextProvider';
 import { Layout } from '../src/template/Layout';
 
 const Home = () => {
   return (
-    <Layout>
+    <AuthContextProvider>
       <span>demo</span>
-    </Layout>
+    </AuthContextProvider>
   );
 };
 
