@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import type { FC } from 'react';
+import { Header } from '../../organisms/Header';
 import { styles } from './styles';
 
 export type Props = {
@@ -12,6 +13,7 @@ export const Layout: FC<Props> = ({ children }) => {
       <Head>
         <title>リスト</title>
       </Head>
+      <Header />
       <main css={styles.main}>{children}</main>
     </div>
   );
