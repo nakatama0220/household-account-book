@@ -8,13 +8,11 @@ type FormValue = {
 type HandleChange = (e: ChangeEvent<HTMLInputElement>) => void;
 type HandleSignIn = (value: FormValue) => void;
 type HandleSignUp = (value: FormValue) => void;
-type HandleLogout = () => void;
 type Hooks = {
   formValue: FormValue;
   handleChange: HandleChange;
   handleSignIn: HandleSignIn;
   handleSignUp: HandleSignUp;
-  handleLogout: HandleLogout;
 };
 
 export const useHooks = (): Hooks => {
@@ -45,16 +43,10 @@ export const useHooks = (): Hooks => {
     supabase.auth.setSession(data.session);
   }, []);
 
-  const handleLogout = useCallback(async () => {
-    const { error } = await supabase.auth.signOut();
-    console.log(error);
-  }, []);
-
   return {
     formValue,
     handleChange,
     handleSignIn,
     handleSignUp,
-    handleLogout,
   };
 };

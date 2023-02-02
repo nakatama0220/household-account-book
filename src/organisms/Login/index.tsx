@@ -4,7 +4,7 @@ import { useHooks } from './hooks';
 import { styles } from './styles';
 
 export const Login: FC = () => {
-  const { formValue, handleChange, handleSignIn, handleSignUp, handleLogout } = useHooks();
+  const { formValue, handleChange, handleSignIn, handleSignUp } = useHooks();
   return (
     <div css={styles.root}>
       <Input
@@ -26,9 +26,6 @@ export const Login: FC = () => {
       </Button>
       <Button colorScheme="teal" onClick={() => handleSignIn(formValue)}>
         singIn
-      </Button>
-      <Button colorScheme="teal" onClick={handleLogout}>
-        Logout
       </Button>
     </div>
   );
