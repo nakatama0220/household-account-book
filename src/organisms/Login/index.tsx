@@ -4,9 +4,19 @@ import { useHooks } from './hooks';
 import { styles } from './styles';
 
 export const Login: FC = () => {
-  const { formValue, handleChange, handleSignIn, handleSignUp } = useHooks();
+  const {
+    formValue,
+    handleChange,
+    handleSignIn,
+    handleSignUp,
+    handleOpen,
+    handleMailAddressResetChange,
+    handleSendPasswordReset,
+    isPasswordReset,
+    resetMailAddress,
+  } = useHooks();
   return (
-    <div css={styles.root}>
+    <form css={styles.root}>
       <Input
         name="email"
         placeholder="email"
@@ -27,6 +37,23 @@ export const Login: FC = () => {
       <Button colorScheme="teal" onClick={() => handleSignIn(formValue)}>
         singIn
       </Button>
-    </div>
+      <Button colorScheme="teal" onClick={handleOpen}>
+        パスワードをリセットする
+      </Button>
+      {isPasswordReset && (
+        <div>
+          <Input
+            name="password"
+            placeholder="password"
+            css={styles.input}
+            onChange={handleMailAddressResetChange}
+            value={resetMailAddress}
+          />
+          <Button colorScheme="teal" onClick={() => handleSendPasswordReset(resetMailAddress)}>
+            リセットメールを送る
+          </Button>
+        </div>
+      )}
+    </form>
   );
 };
